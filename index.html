@@ -7,102 +7,115 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    *{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+    /* General Reset and Box Sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Outfit';
-    background:repeating-radial-gradient(circle,#b6f4b6,#f5e5e9 30%);
+body {
+    font-family: 'Outfit', sans-serif;
+    background: repeating-radial-gradient(circle, #b6f4b6, #f5e5e9 30%);
 }
 
-.contact-container{
-    height:100vh;
-    display:flex;
+.contact-container {
+    height: 100vh;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction:row;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-.contact-left{
-    display:flex;
+.contact-left {
+    display: flex;
     flex-direction: column;
     align-items: start;
-    gap:20px;
+    gap: 20px;
+    flex: 1 1 300px; /* Allow for flexible sizing */
 }
 
-.contact-left-title h2{
+.contact-left-title h2 {
     font-weight: 600;
-    color:rgb(38, 57, 230);
+    color: rgb(38, 57, 230);
     font-size: 40px;
     margin-bottom: 5px;
 }
 
-.contact-left-title hr{
-border:none;
-width:120px;
-height:5px;
-background-color: rgb(38, 57, 230);
-border-radius: 10px;
-margin-bottom: 20px;
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: rgb(38, 57, 230);
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.contact-inputs{
-    width:400px;
-    height:50px;
-    border:none;
-    outline:none;
-    padding-left:25px;
+.contact-inputs {
+    width: 100%;
+    max-width: 400px; /* Constrain maximum width */
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
     font-weight: 500;
-    color:rgb(214, 133, 45);
+    color: rgb(214, 133, 45);
     border-radius: 50px;
 }
 
-.contact-left textarea{
-    height:140px;
+.contact-left textarea {
+    height: 140px;
     padding-top: 15px;
     border-radius: 20px;
 }
 
-.contact-inputs:focus{
-    border:2px solid #ff994f;
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
 }
 
-.contact-inputs::placeholder{
+.contact-inputs::placeholder {
     color: #a9a9a9;
 }
 
-.contact-left button{
-    display:flex;
+.contact-left button {
+    display: flex;
     align-items: center;
-    padding:15px 30px;
+    padding: 15px 30px;
     font-size: 16px;
-    color:#fff;
-    gap:10px;
-    border:none;
-    border-radius:50px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
     cursor: pointer;
     background: repeating-linear-gradient(to right, #1abc9c, #3498db 20%);
+    max-width: 200px; /* Constrain button width */
+    width: 100%; /* Ensure button is responsive */
 }
 
-.contact-left i{
-height:15px;
+.contact-left i {
+    height: 15px;
 }
 
-.contact-right img{
-    width:500px;
+.contact-right img {
+    width: 100%;
+    max-width: 500px; /* Constrain maximum width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-@media(max-width:80px){
-    .contact-inputs{
-        width:80vw;
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
     }
-    .contact-right{
-        display:none;
+    .contact-left {
+        width: 90%; /* Adjust width on smaller screens */
+    }
+    .contact-right {
+        display: none; /* Hide image on small screens */
     }
 }
+
 </style>
 </head>
 
